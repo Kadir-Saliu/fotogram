@@ -9,14 +9,10 @@ function getInformationTemplate(index) {
          <img class="header-img" src="./img/book.jpg" alt="" srcset="">
 
          <div class="liked">
-          <p> <strong> Price: ${books[index].price} € </strong> </p>
-           <p id="counterUp"> <strong> Like ${
-             books[index].likes
-           }  </strong> </p>
-
-           <p id="myImage">${getLikedImgTemplate(index)} </p>
-           
-         </div>
+            <p> <strong> Price: ${books[index].price} € </strong> </p>
+            <p id="counterUp"> <strong> Like ${books[index].likes}</strong> </p>
+            <p id="myImage">${getLikedImgTemplate(index)} </p>
+          </div>
         
         
         <p>Author/in: <strong> ${books[index].author} </strong> </p>
@@ -26,11 +22,11 @@ function getInformationTemplate(index) {
             <p>${getComments(index)}</p>
         </section>
 
-        <section class="add-comments">
-        <input id="name_input${index}" type="text" placeholder="Bitte Namen Eingeben!"> 
-        <input id="comment_input${index}" type="text" placeholder="Bitte Kommentar eingeben!">
-        <button onclick="addComent(${index})" type="button">Kommentar hinzufügen</button>
-        </section>
+        <form onsubmit="addComent(${index})"  class="add-comments" id='content'>
+        <input id="name_input${index}" type="text" placeholder="Bitte Namen Eingeben!" required> 
+        <input id="comment_input${index}" type="text" placeholder="Bitte Kommentar eingeben!" required>
+        <button  type="submit">Kommentar hinzufügen</button>
+        </form>
        
     </article>
     `;

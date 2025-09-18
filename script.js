@@ -1,3 +1,8 @@
+function init(){
+   renderInformation()
+}
+
+
 function renderInformation() {
   let contentRef = document.getElementById("content");
   contentRef.innerHTML = "";
