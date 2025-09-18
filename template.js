@@ -1,5 +1,5 @@
 function getInformationTemplate(index) {
-  return /*html*/`
+  return /*html*/ `
     
  
     <article class="books">
@@ -22,14 +22,15 @@ function getInformationTemplate(index) {
         <p>Author/in: <strong> ${books[index].author} </strong> </p>
         <h3>Comments:</h3>
 
-        <div class="all-comments">
+        <section class="all-comments">
             <p>${getComments(index)}</p>
-        </div>
-        
+        </section>
+
+        <section class="add-comments">
         <input id="name_input${index}" type="text" placeholder="Bitte Namen Eingeben!"> 
         <input id="comment_input${index}" type="text" placeholder="Bitte Kommentar eingeben!">
         <button onclick="addComent(${index})" type="button">Kommentar hinzufügen</button>
-        
+        </section>
        
     </article>
     `;
