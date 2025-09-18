@@ -1,10 +1,12 @@
 function getInformationTemplate(index) {
-  return `
-    <div class="books">
+  return /*html*/`
+    
+ 
+    <article class="books">
 
         <h2>Name: ${books[index].name}</h2>
 
-         <img src="./img/book.jpg" alt="" srcset="">
+         <img class="header-img" src="./img/book.jpg" alt="" srcset="">
 
          <div class="liked">
           <p> <strong> Price: ${books[index].price} € </strong> </p>
@@ -29,14 +31,14 @@ function getInformationTemplate(index) {
         <button onclick="addComent(${index})" type="button">Kommentar hinzufügen</button>
         
        
-    </div>
+    </article>
     `;
 }
 
 function getLikedImgTemplate(index) {
   if (books[index].liked == true) {
-    return `<img onclick="likeUp(${index})" id="myImage"  src="./img/red-heart_.png" alt="">`;
+    return `<img class="heart-img" onclick="likeUp(${index})" id="myImage"  src="./img/red-heart_.png" alt="">`;
   } else {
-    return `<img onclick="likeDown(${index})" id="myImage"  src="./img/heart_.png" alt="">`;
+    return `<img class="heart-img" onclick="likeDown(${index})" id="myImage"  src="./img/heart_.png" alt="">`;
   }
 }

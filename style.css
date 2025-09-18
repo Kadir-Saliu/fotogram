@@ -74,10 +74,15 @@ div {
   padding: 20px;
 }
 
-#content img {
+.header-img{
   width: 200px;
   height: 200px;
   object-fit: contain;
+}
+
+.heart-img{
+  width: 40px;
+  height: 40px;
 }
 
 input {
