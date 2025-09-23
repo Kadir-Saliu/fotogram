@@ -67,7 +67,7 @@ div {
   align-items: center;
   justify-content: center;
   max-width: 500px;
-
+  width: 80%;
   border-radius: 50px;
   padding: 20px;
 }

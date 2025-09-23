@@ -1,4 +1,4 @@
-function getInformationTemplate(index) {
+function getBooksTemplate(index) {
   return /*html*/ `
     
  
@@ -25,17 +25,26 @@ function getInformationTemplate(index) {
         <form onsubmit="addComent(${index})"  class="add-comments" id='content'>
         <input id="name_input${index}" type="text" placeholder="Bitte Namen Eingeben!" required> 
         <input id="comment_input${index}" type="text" placeholder="Bitte Kommentar eingeben!" required>
-        <button  type="submit">Kommentar hinzufügen</button>
+        <button type="submit">Kommentar hinzufügen</button>
         </form>
        
     </article>
     `;
 }
 
+function getCommentTemplate(index,i){
+ return `
+        
+        <h3>Name: ${books[index].comments[i].name}</h3>
+        <p>Comment: ${books[index].comments[i].comment}</p>
+        
+        `;
+}
+
 function getLikedImgTemplate(index) {
   if (books[index].liked == true) {
-    return `<img class="heart-img" onclick="likeUp(${index})" id="myImage"  src="./img/red-heart_.png" alt="">`;
+    return `<img class="heart-img" onclick="changeLike(${index})" id="myImage"  src="./img/red-heart_.png" alt="">`;
   } else {
-    return `<img class="heart-img" onclick="likeDown(${index})" id="myImage"  src="./img/heart_.png" alt="">`;
+    return `<img class="heart-img" onclick="changeLike(${index})" id="myImage"  src="./img/heart_.png" alt="">`;
   }
 }

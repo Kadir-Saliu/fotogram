@@ -1,13 +1,13 @@
 function init(){
-   renderInformation()
+   renderBooks()
 }
 
 
-function renderInformation() {
+function renderBooks() {
   let contentRef = document.getElementById("content");
   contentRef.innerHTML = "";
   for (let index = 0; index < books.length; index++) {
-    contentRef.innerHTML += getInformationTemplate(index);
+    contentRef.innerHTML += getBooksTemplate(index);
   }
 }
 
@@ -15,15 +15,14 @@ function getComments(index) {
   let comment = "";
 
   for (let i = 0; i < books[index].comments.length; i++) {
-    comment += `
-        
-        <h3>Name: ${books[index].comments[i].name}</h3>
-        <p>Comment: ${books[index].comments[i].comment}</p>
-        
-        `;
+    console.log(i);
+    
+    comment += getCommentTemplate(index,i);
   }
   return comment;
 }
+
+
 
 function addComent(index) {
   let nameInputRef = document.getElementById(`name_input${index}`);
@@ -37,21 +36,12 @@ function addComent(index) {
 
   books[index].comments.push(newComment);
 
-  renderInformation();
+  renderBooks();
 
   nameInput = "";
   commentInput = "";
 }
 
-function likeUp(index) {
-  books[index].likes++;
-}
-
-function likeDown(index) {
-  let likeCounter = document.getElementById("counterUp");
-  let counter = books[index].likes;
-  if (counter == counter) {
-    books[index].likes--;
-    likeCounter.innerHTML += renderInformation();
-  }
+function changeLike(){
+  
 }
